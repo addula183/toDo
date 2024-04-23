@@ -83,7 +83,7 @@ app.post('/register', async(req, res) => {
             email,
             password : hashedPassword
         });
-
+console.log('s',newUser );
         await newUser.save();
         res.send(`
             <script>

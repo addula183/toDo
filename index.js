@@ -46,8 +46,10 @@ app.get('/login', (req, res) => {
 
 //registration route
 app.post('/register', async(req, res) => {
+    
     try 
     {
+        res.status(200).send("working");
         const {
             username,
             email,
@@ -84,12 +86,12 @@ app.post('/register', async(req, res) => {
         });
 
         await newUser.save();
-        res.send(`
-            <script>
-                alert('User Succesfully registered');
-                window.location.href = '/login';
-            </script>
-            `);
+        // res.send(`
+        //     <script>
+        //         alert('User Succesfully registered');
+        //         window.location.href = '/login';
+        //     </script>
+        //     `);
 
     }   
     catch (e) 
